@@ -5,4 +5,5 @@ public class Product : ScriptableObject
 {
     public string label;
     public int consumptionSpeed;
+    public int initialValue;
 }

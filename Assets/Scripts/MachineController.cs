@@ -14,7 +14,7 @@ public class MachineController : MonoBehaviour
     {
         Product product = machine.outputProduct;
         int consumptionSpeed = product.consumptionSpeed;
-        GameController.Instance.RemoveProduct(product, consumptionSpeed);
+        GameController.Instance.RemoveProduct(product, consumptionSpeed * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider other) {
