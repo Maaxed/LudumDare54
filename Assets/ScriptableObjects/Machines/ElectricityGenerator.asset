@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ca04b9b0f42ad4d843ece412307871, type: 3}
+  m_Name: ElectricityGenerator
+  m_EditorClassIdentifier: 
+  label: 
+  inputResource: {fileID: 11400000, guid: d311c9b519bea9a41a56e2e7f07e3496, type: 2}
+  outputQuantity: 5
+  outputProduct: {fileID: 11400000, guid: 216553cd42fd40945b82b2678bfc9e16, type: 2}

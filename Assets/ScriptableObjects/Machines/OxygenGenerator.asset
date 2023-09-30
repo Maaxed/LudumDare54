@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ca04b9b0f42ad4d843ece412307871, type: 3}
+  m_Name: OxygenGenerator
+  m_EditorClassIdentifier: 
+  label: 
+  inputResource: {fileID: 11400000, guid: 36012f130d76e2d4e8d9a10036d80257, type: 2}
+  outputQuantity: 15
+  outputProduct: {fileID: 11400000, guid: c0822d9d9b74cac489659d3966b81c24, type: 2}
