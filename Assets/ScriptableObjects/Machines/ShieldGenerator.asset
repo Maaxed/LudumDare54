@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ca04b9b0f42ad4d843ece412307871, type: 3}
   m_Name: ShieldGenerator
   m_EditorClassIdentifier: 
-  label: 
+  label: ShieldGenerator
   inputResource: {fileID: 11400000, guid: d311c9b519bea9a41a56e2e7f07e3496, type: 2}
-  outputQuantity: 1
+  outputQuantity: 5
   outputProduct: {fileID: 11400000, guid: 4704016d9d7aa284f913f10854a76f69, type: 2}

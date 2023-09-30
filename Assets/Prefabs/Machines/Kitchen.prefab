@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7296017334586577110}
   - component: {fileID: 2026631442241707925}
+  - component: {fileID: 7925284074355400305}
   m_Layer: 0
-  m_Name: Machine
+  m_Name: Kitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,6 +61,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &7925284074355400305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626540704257016629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4713ae19114894388cebd0cd50ad6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  machine: {fileID: 11400000, guid: 6a2546691941a37498243fe109884ef1, type: 2}
 --- !u!1 &4979884349234418875
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +86,6 @@ GameObject:
   - component: {fileID: 7217251042287289191}
   - component: {fileID: 4067064062340766518}
   - component: {fileID: 5224977706823039686}
-  - component: {fileID: 784372198863947916}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -123,7 +136,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 47d955dc81f793a4f8ae87b1f21efb05, type: 2}
+  - {fileID: 2100000, guid: adf9481bf23c51b41bb650f8104471af, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -166,16 +179,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &784372198863947916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4979884349234418875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc4713ae19114894388cebd0cd50ad6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  machine: {fileID: 11400000, guid: 1109ad9796443d8418c5f259be7a6d8a, type: 2}

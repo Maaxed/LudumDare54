@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ca04b9b0f42ad4d843ece412307871, type: 3}
   m_Name: Kitchen
   m_EditorClassIdentifier: 
-  label: 
+  label: Kitchen
   inputResource: {fileID: 11400000, guid: c3a4e4077292ca142aa227d3cb3e8ef7, type: 2}
-  outputQuantity: 2
+  outputQuantity: 5
   outputProduct: {fileID: 11400000, guid: 01d9128f9be3f914592b4cb627f4edd8, type: 2}

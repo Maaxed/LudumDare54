@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ca04b9b0f42ad4d843ece412307871, type: 3}
   m_Name: Motor
   m_EditorClassIdentifier: 
-  label: 
+  label: Motor
   inputResource: {fileID: 11400000, guid: ad1389f8303e7314e886215d0f1b9a52, type: 2}
   outputQuantity: 20
   outputProduct: {fileID: 11400000, guid: d6dada5ee032e15469b2513f158a6a3d, type: 2}
