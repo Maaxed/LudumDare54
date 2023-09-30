@@ -5,6 +5,6 @@ public class Machine : ScriptableObject
 {
     public string label;
     public Resource inputResource;
-    public int outputQuantity;
+    public float outputQuantity;
     public Product outputProduct;
 }
