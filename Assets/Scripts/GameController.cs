@@ -21,12 +21,19 @@ public class GameController : MonoBehaviour
 
     public void AddProduct(Product product, float quantity) 
     {
-        productsQuantity[product] += quantity;
+        float newValue = productsQuantity[product] + quantity;
+        productsQuantity[product] = Mathf.Min(product.maxValue, newValue);
     }
 
     public void RemoveProduct(Product product, float quantity) 
     {
-        productsQuantity[product] -= quantity;
+        float newValue = productsQuantity[product] - quantity;
+        productsQuantity[product] = Mathf.Max(0.0f, newValue);
+    }
+
+    public float GetProductValue(Product product)
+    {
+        return productsQuantity[product];
     }
 
     // Start is called before the first frame update

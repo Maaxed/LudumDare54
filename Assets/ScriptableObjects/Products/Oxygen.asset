@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Oxygen
   m_EditorClassIdentifier: 
   label: Oxygen
-  consumptionSpeed: 1
+  consumptionSpeed: 5
   initialValue: 100
+  maxValue: 200
