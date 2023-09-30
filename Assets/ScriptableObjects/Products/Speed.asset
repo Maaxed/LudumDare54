@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Speed
   m_EditorClassIdentifier: 
   label: Speed
-  consumptionSpeed: 1
+  consumptionSpeed: 0.1
   initialValue: 20
+  maxValue: 40

@@ -157,6 +157,10 @@ PrefabInstance:
       propertyPath: machine
       value: 
       objectReference: {fileID: 11400000, guid: 1109ad9796443d8418c5f259be7a6d8a, type: 2}
+    - target: {fileID: 7453810321879512763, guid: 21679cc96bcd6d74b9e6caeff9c62000, type: 3}
+      propertyPath: ProductType
+      value: 
+      objectReference: {fileID: 11400000, guid: c0822d9d9b74cac489659d3966b81c24, type: 2}
     - target: {fileID: 8405913182870529010, guid: 21679cc96bcd6d74b9e6caeff9c62000, type: 3}
       propertyPath: m_Name
       value: OxygenGenerator

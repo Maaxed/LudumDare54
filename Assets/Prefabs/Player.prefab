@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 344160103373304210}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 826826272235554954}
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0bc3c7adc63c34c89b916a05a9b391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 16
 --- !u!114 &2282487557742651267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +315,7 @@ Transform:
   m_GameObject: {fileID: 4385821295715196967}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -338,7 +338,7 @@ MonoBehaviour:
   GrabPosition: {fileID: 5085247349800569341}
   GrabbedObject: {fileID: 0}
   Force: 8
-  MaxGrabDistance: 3
+  MaxGrabDistance: 6
 --- !u!1 &6766454026358803853
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +364,7 @@ Transform:
   m_GameObject: {fileID: 6766454026358803853}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.5}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Electricity
   m_EditorClassIdentifier: 
   label: Electricity
-  consumptionSpeed: 1
+  consumptionSpeed: 0.1
   initialValue: 30
+  maxValue: 60

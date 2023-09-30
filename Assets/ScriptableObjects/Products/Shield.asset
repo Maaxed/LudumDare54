@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Shield
   m_EditorClassIdentifier: 
   label: Shield
-  consumptionSpeed: 1
+  consumptionSpeed: 0.1
   initialValue: 10
+  maxValue: 20
