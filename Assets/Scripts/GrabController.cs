@@ -45,15 +45,9 @@ public class GrabController : MonoBehaviour
 
             Vector3 anglDiff = Quaternion.Inverse(GrabbedObject.rotation).eulerAngles;
 
-            if (anglDiff.x > 180.0f)
-            {
-                anglDiff.x -= 360.0f;
-            }
+            anglDiff.x = Mathf.DeltaAngle(0.0f, anglDiff.x);
             anglDiff.y = 0.0f;
-            if (anglDiff.z > 180.0f)
-            {
-                anglDiff.z -= 360.0f;
-            }
+            anglDiff.z = Mathf.DeltaAngle(0.0f, anglDiff.z);
 
             GrabbedObject.angularVelocity = anglDiff * RotationForce;
         }

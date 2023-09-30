@@ -122,6 +122,7 @@ public class AirlockController : MonoBehaviour
             if (player != null)
             {
                 player.enabled = false;
+                GameController.Instance.LoseGame();
             }
         }
     }

@@ -26,7 +26,9 @@ public class CameraController : MonoBehaviour
         float vertical = Input.GetAxis("CameraVertical");
         if (Mathf.Abs(vertical) > 0.0001)
         {
-            Camera.rotation = Quaternion.Euler(Camera.rotation.eulerAngles + new Vector3(-vertical * Speed, 0.0f, 0.0f));
+            Vector3 newRotation = Camera.rotation.eulerAngles + new Vector3(-vertical * Speed, 0.0f, 0.0f);
+            newRotation.x = Mathf.Clamp(Mathf.DeltaAngle(0.0f, newRotation.x), -90.0f, 90.0f);
+            Camera.rotation = Quaternion.Euler(newRotation);
         }
     }
 }

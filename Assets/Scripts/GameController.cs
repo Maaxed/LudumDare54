@@ -1,57 +1,90 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField] public List<Product> products;
 
-    private IDictionary<Product, float> productsQuantity = new Dictionary<Product, float>();
+    private List<float> productQuantities = new List<float>();
 
-    private void Awake() 
-    { 
-        Instance = this;
+    private void Awake()
+    {
+        InternalInstance = this;
 
-        foreach(Product product in products) {
-            productsQuantity.Add(product, product.initialValue);
+        foreach (Product product in products)
+        {
+            productQuantities.Add(product.initialValue);
         }
     }
 
-    public static GameController Instance { get; private set; }
+
+    private static GameController InternalInstance;
+
+    public static GameController Instance
+    {
+        get
+        {
+            if (InternalInstance == null)
+            {
+                InternalInstance = FindObjectOfType<GameController>();
+            }
+
+            return InternalInstance;
+        }
+    }
+
+    private int GetIndex(Product product)
+    {
+        for (int i = 0; i < products.Count; i++)
+        {
+            if (products[i] == product)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
 
     public void AddProduct(Product product, float quantity) 
     {
-        float newValue = productsQuantity[product] + quantity;
-        productsQuantity[product] = Mathf.Min(product.maxValue, newValue);
+        int index = GetIndex(product);
+        float newValue = productQuantities[index] + quantity;
+        productQuantities[index] = Mathf.Min(product.maxValue, newValue);
     }
 
-    public void RemoveProduct(Product product, float quantity) 
+    public void RemoveProduct(Product product, float quantity)
     {
-        float newValue = productsQuantity[product] - quantity;
-        productsQuantity[product] = Mathf.Max(0.0f, newValue);
+        int index = GetIndex(product);
+        float newValue = productQuantities[index] - quantity;
+        productQuantities[index] = Mathf.Max(0.0f, newValue);
     }
 
     public float GetProductValue(Product product)
     {
-        return productsQuantity[product];
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        return productQuantities[GetIndex(product)];
     }
 
     // Update is called once per frame
     void Update() 
     {
-        foreach(Product product in products) {
+        foreach(Product product in products)
+        {
             RemoveProduct(product, product.consumptionSpeed * Time.deltaTime);
+            if (productQuantities[GetIndex(product)] <= 0.0f && product.isVital)
+            {
+                LoseGame();
+            }
         }
     }
-
-    public override string ToString() 
+    public void LoseGame()
     {
-        return String.Join(", ", productsQuantity);
+        Debug.Log("You lost !");
+    }
+
+    public override string ToString()
+    {
+        return string.Join(", ", productQuantities.Zip(products, (a, b) => Tuple.Create(a, b)));
     }
 }
