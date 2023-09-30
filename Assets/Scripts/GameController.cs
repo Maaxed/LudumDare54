@@ -8,7 +8,8 @@ public class GameController : MonoBehaviour
 
     private IDictionary<Product, float> productsQuantity = new Dictionary<Product, float>();
 
-    private void Awake() { 
+    private void Awake() 
+    { 
         Instance = this;
 
         foreach(Product product in products) {
@@ -18,11 +19,13 @@ public class GameController : MonoBehaviour
 
     public static GameController Instance { get; private set; }
 
-    public void AddProduct(Product product, float quantity) {
+    public void AddProduct(Product product, float quantity) 
+    {
         productsQuantity[product] += quantity;
     }
 
-    public void RemoveProduct(Product product, float quantity) {
+    public void RemoveProduct(Product product, float quantity) 
+    {
         productsQuantity[product] -= quantity;
     }
 
@@ -33,11 +36,15 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() 
     {
+        foreach(Product product in products) {
+            RemoveProduct(product, product.consumptionSpeed * Time.deltaTime);
+        }
     }
 
-    public override string ToString() {
+    public override string ToString() 
+    {
         return String.Join(", ", productsQuantity);
     }
 }

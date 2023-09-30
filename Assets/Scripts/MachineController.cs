@@ -12,16 +12,14 @@ public class MachineController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Product product = machine.outputProduct;
-        int consumptionSpeed = product.consumptionSpeed;
-        GameController.Instance.RemoveProduct(product, consumptionSpeed * Time.deltaTime);
     }
 
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerEnter(Collider other) 
+    {
         if (other.CompareTag("Item")) {
             ResourceController resourceController = other.GetComponentInParent<ResourceController>();
             if (resourceController != null && resourceController.GetResource() == machine.inputResource) {
-                GameController.Instance.AddProduct(machine.outputProduct, machine.outputProduct.consumptionSpeed);
+                GameController.Instance.AddProduct(machine.outputProduct, machine.outputQuantity);
             }
         }
         
