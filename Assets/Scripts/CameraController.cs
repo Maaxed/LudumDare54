@@ -15,6 +15,9 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!Application.isFocused)
+            return;
+
         float horizontal = Input.GetAxis("CameraHorizontal");
         if (Mathf.Abs(horizontal) > 0.0001)
         {
