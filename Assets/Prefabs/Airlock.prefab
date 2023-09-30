@@ -820,6 +820,11 @@ MonoBehaviour:
   ClosedTime: 5
   DestroyTime: 5
   EjectionForce: {x: 0, y: 0, z: -100}
+  ItemParent: {fileID: 0}
+  ItemSpawnArea:
+    m_Center: {x: 0, y: 2, z: 0}
+    m_Extent: {x: 1, y: 1, z: 1}
+  ItemGeneration: {fileID: 11400000, guid: 6e3b0f6c1a0fabf4399efbae9a389ad7, type: 2}
 --- !u!65 &223299209450243959
 BoxCollider:
   m_ObjectHideFlags: 0
