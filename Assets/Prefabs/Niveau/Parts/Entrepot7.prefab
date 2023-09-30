@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5124358559582272448}
   - component: {fileID: 1352289163756810465}
   - component: {fileID: 5432306757633515681}
+  - component: {fileID: 6726899627467379218}
   m_Layer: 0
   m_Name: Entrepot7
   m_TagString: Untagged
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5025276726029815264}
-  m_Mesh: {fileID: 6433510900185292932, guid: 541d52097a34a394f98b412206d1b5f3, type: 3}
+  m_Mesh: {fileID: 6433510900185292932, guid: 1294a301c8441ed45ab269d36c45a694, type: 3}
 --- !u!23 &5432306757633515681
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -83,3 +84,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6726899627467379218
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025276726029815264}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6433510900185292932, guid: 1294a301c8441ed45ab269d36c45a694, type: 3}
