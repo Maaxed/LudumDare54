@@ -27,7 +27,10 @@ public class GrabController : MonoBehaviour
         {
             if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo, MaxGrabDistance))
             {
-                GrabbedObject = hitInfo.rigidbody;
+                if (hitInfo.rigidbody.gameObject.CompareTag("Item"))
+                {
+                    GrabbedObject = hitInfo.rigidbody;
+                }
             }
         }
 
