@@ -1061,6 +1061,14 @@ PrefabInstance:
       propertyPath: ItemParent
       value: 
       objectReference: {fileID: 288741125}
+    - target: {fileID: 4570398559310603966, guid: efec2c9b931a9a4499637d254b6309c9, type: 3}
+      propertyPath: EjectionForce.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570398559310603966, guid: efec2c9b931a9a4499637d254b6309c9, type: 3}
+      propertyPath: EjectionForce.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7182738229573974385, guid: efec2c9b931a9a4499637d254b6309c9, type: 3}
       propertyPath: m_Name
       value: SpaceShip
@@ -1069,6 +1077,14 @@ PrefabInstance:
       propertyPath: ItemParent
       value: 
       objectReference: {fileID: 288741125}
+    - target: {fileID: 7283594409214445997, guid: efec2c9b931a9a4499637d254b6309c9, type: 3}
+      propertyPath: EjectionForce.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283594409214445997, guid: efec2c9b931a9a4499637d254b6309c9, type: 3}
+      propertyPath: EjectionForce.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
