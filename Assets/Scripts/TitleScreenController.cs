@@ -26,8 +26,10 @@ public class TitleScreenController : MonoBehaviour
         if (entering && loadOperation.progress >= 1) {
             leftDoor.transform.Translate(Vector3.left * 1000 * Time.deltaTime);
             rightDoor.transform.Translate(Vector3.right * 1000 * Time.deltaTime);
-            if (leftDoor.transform.position.x <= 0) {
+            
+            if (leftDoor.transform.position.x + leftDoor.GetComponent<RectTransform>().rect.width  < 0) {
                 entering = false;
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName("SampleSceneMathilde"));
                 SceneManager.UnloadSceneAsync("TitleScreen");
             }
         }
