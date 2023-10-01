@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public AudioSource audioSource;
 
     private string loseReason;
+    private bool gameLost = false;
 
     private List<ProductData> productData = new List<ProductData>();
 
@@ -113,46 +114,55 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update() 
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
+        if (!gameLost) {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
 
-        foreach(Product product in products)
-        {
-            int index = GetIndex(product);
-            if (!productData[index].Enabled)
-                continue;
+            foreach(Product product in products)
+            {
+                int index = GetIndex(product);
+                if (!productData[index].Enabled)
+                    continue;
 
-            RemoveProduct(product, product.consumptionSpeed * Time.deltaTime);
+                RemoveProduct(product, product.consumptionSpeed * Time.deltaTime);
 
-            if (productData[index].Quantity <= 0.0f && product.isVital)
-            {        
-                string reason;
-                switch(product.label) {
-                    case "Satiety":
-                        reason = "of hunger";
-                        break;
-                    case "Oxygen":
-                        reason = "of suffocation";
-                        break;
-                    case "Shield":
-                        reason = "of an asteroid rain";
-                        break;
-                    default:
-                        reason = "of unknown reason";
-                        break;
+                if (productData[index].Quantity <= 0.0f && product.isVital)
+                {        
+                    string reason;
+                    switch(product.label) {
+                        case "Satiety":
+                            reason = "of hunger";
+                            break;
+                        case "Oxygen":
+                            reason = "of suffocation";
+                            break;
+                        case "Shield":
+                            reason = "of an asteroid rain";
+                            break;
+                        default:
+                            reason = "of unknown reason";
+                            break;
+                    }
+                    LoseGame(reason);
                 }
-                LoseGame(reason);
             }
         }
     }
     public void LoseGame(string reason)
     {
-        Debug.Log("You lost !");
-        loseReason = reason;
-        SceneManager.LoadSceneAsync("GameOverScreen", LoadSceneMode.Additive);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("GameOverScreen"));
+        if (!gameLost) {
+            gameLost = true;
+            Debug.Log("You lost !");
+            loseReason = reason;
+            
+            AsyncOperation op = SceneManager.LoadSceneAsync("GameOverScreen", LoadSceneMode.Additive);
+            op.completed += (truc) =>
+            {
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName("GameOverScreen"));
+            };
+        }
     }
 
     public override string ToString()

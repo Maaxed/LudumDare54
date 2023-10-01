@@ -16,6 +16,7 @@ public class GameOverScreenController : MonoBehaviour
     {
         newGameButton.onClick.AddListener(enterGame);
         text.text = textContent + GameController.Instance.GetLoseReason() + ".";
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
