@@ -4,6 +4,7 @@ public class EventManager : MonoBehaviour
 {
     public float EnterAsteroidFieldTime = 0.0f;
     public Product ShieldProduct;
+    public AudioSource AsteroidAlarm;
 
     private float CurrentTime = 0.0f;
     private bool AsteroidFieldEventActive = false;
@@ -13,10 +14,32 @@ public class EventManager : MonoBehaviour
     {
         CurrentTime += Time.deltaTime;
 
-        if (CurrentTime > EnterAsteroidFieldTime && !AsteroidFieldEventActive)
+        if (CurrentTime > EnterAsteroidFieldTime)
         {
             AsteroidFieldEventActive = true;
-            GameController.Instance.EnableProduct(ShieldProduct);
         }
+
+        if (AsteroidFieldEventActive)
+        {
+            if (GameController.Instance.IsProductEnabled(ShieldProduct))
+            {
+                if (AsteroidAlarm.isPlaying)
+                {
+                    AsteroidAlarm.Stop();
+                }
+            }
+            else
+            {
+                if (!AsteroidAlarm.isPlaying)
+                {
+                    AsteroidAlarm.Play();
+                }
+            }
+        }
+    }
+
+    public void ToggleShield()
+    {
+        GameController.Instance.EnableProduct(ShieldProduct);
     }
 }
