@@ -5,6 +5,7 @@ using UnityEngine;
 public class GrabController : MonoBehaviour
 {
     public Rigidbody GrabbedObject;
+    public GameObject Crosshair;
     public float Force = 1.0f;
     public float RotationForce = 1.0f;
     public float MaxGrabDistance = 10.0f;
@@ -18,17 +19,22 @@ public class GrabController : MonoBehaviour
             GrabbedObject = null;
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        bool showCrosshair = false;
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo, MaxGrabDistance))
         {
-            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo, MaxGrabDistance))
+            if (hitInfo.rigidbody != null && hitInfo.rigidbody.gameObject.CompareTag("Item"))
             {
-                if (hitInfo.rigidbody != null && hitInfo.rigidbody.gameObject.CompareTag("Item"))
+                showCrosshair = true;
+                if (Input.GetButtonDown("Fire1"))
                 {
                     GrabbedObject = hitInfo.rigidbody;
                 }
             }
         }
-
+        if (Crosshair != null)
+        {
+            Crosshair.SetActive(showCrosshair);
+        }
     }
 
     void FixedUpdate()
