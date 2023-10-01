@@ -16,3 +16,4 @@ MonoBehaviour:
   consumptionSpeed: 0.1
   initialValue: 20
   maxValue: 40
+  isVital: 0
