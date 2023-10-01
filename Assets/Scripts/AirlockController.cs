@@ -6,6 +6,7 @@ public class AirlockController : MonoBehaviour
 {
     public DoorController InteriorDoor;
     public DoorController ExteriorDoor;
+    public float InitialDelay = 0.0f;
     public float OpenTime = 1.0f;
     public float ClosedTime = 1.0f;
     public float DestroyTime = 1.0f;
@@ -16,14 +17,23 @@ public class AirlockController : MonoBehaviour
     private List<GameObject> ItemPool;
     private System.Random random = new System.Random();
     private bool EjectingItems = false;
+    private float StartOpenTime = -1.0f;
 
-    private void Start()
+    public float Progress => StartOpenTime < 0.0f ? 1.0f : Mathf.Clamp01((Time.time - StartOpenTime) / OpenTime);
+
+    private void OnEnable()
     {
         StartCoroutine(Run());
+    }
+    private void OnDisable()
+    {
+        StopCoroutine(Run());
     }
 
     public IEnumerator Run()
     {
+        yield return new WaitForSeconds(InitialDelay);
+
         while (true)
         {
             yield return PlayCycle();
@@ -37,7 +47,9 @@ public class AirlockController : MonoBehaviour
         GenerateItems();
 
         yield return InteriorDoor.Open();
+        StartOpenTime = Time.time;
         yield return new WaitForSeconds(OpenTime);
+        StartOpenTime = -1.0f;
         yield return InteriorDoor.Close();
 
         yield return ExteriorDoor.Open();
