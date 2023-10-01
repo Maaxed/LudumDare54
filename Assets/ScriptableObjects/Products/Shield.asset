@@ -15,5 +15,7 @@ MonoBehaviour:
   label: Shield
   consumptionSpeed: 0.1
   initialValue: 10
+  initiallyEnabled: 0
   maxValue: 20
   isVital: 1
+  switchOnSound: {fileID: 8300000, guid: 45534aa097b21094ca6dd4efacae8250, type: 3}

@@ -18,14 +18,21 @@ public class MachineController : MonoBehaviour
     void OnTriggerEnter(Collider other) 
     {
         ResourceController resourceController = other.GetComponentInParent<ResourceController>();
-        if (resourceController != null && resourceController.GetResource() == machine.inputResource) {
-            GameController.Instance.AddProduct(machine.outputProduct, machine.outputQuantity);
-            if (UseAudio != null)
-            {
-                UseAudio.Play();
-            }
-            Destroy(resourceController.gameObject);
+        if (resourceController == null)
+            return;
+
+        if (resourceController.GetResource() != machine.inputResource)
+            return;
+
+        if (!GameController.Instance.IsProductEnabled(machine.outputProduct))
+            return;
+
+        GameController.Instance.AddProduct(machine.outputProduct, machine.outputQuantity);
+        if (UseAudio != null)
+        {
+            UseAudio.Play();
         }
+        Destroy(resourceController.gameObject);
     }
     
 }

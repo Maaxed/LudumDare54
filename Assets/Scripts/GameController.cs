@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [SerializeField] public List<Product> products;
+    public AudioSource audioSource;
 
-    private List<float> productQuantities = new List<float>();
     private string loseReason;
+
+    private List<ProductData> productData = new List<ProductData>();
 
     private void Awake()
     {
@@ -17,7 +19,10 @@ public class GameController : MonoBehaviour
 
         foreach (Product product in products)
         {
-            productQuantities.Add(product.initialValue);
+            var data = new ProductData();
+            data.Quantity = product.initialValue;
+            data.Enabled = product.initiallyEnabled;
+            productData.Add(data);
         }
     }
 
@@ -52,20 +57,53 @@ public class GameController : MonoBehaviour
     public void AddProduct(Product product, float quantity) 
     {
         int index = GetIndex(product);
-        float newValue = productQuantities[index] + quantity;
-        productQuantities[index] = Mathf.Min(product.maxValue, newValue);
+        ProductData data = productData[index];
+        float oldQuantity = data.Quantity;
+        data.Quantity = Mathf.Min(product.maxValue, data.Quantity + quantity);
+        productData[index] = data;
+
+        if (oldQuantity <= 0.0f && data.Quantity > 0.0f && product.switchOnSound != null)
+        {
+            audioSource.PlayOneShot(product.switchOnSound);
+        }
     }
 
     public void RemoveProduct(Product product, float quantity)
     {
         int index = GetIndex(product);
-        float newValue = productQuantities[index] - quantity;
-        productQuantities[index] = Mathf.Max(0.0f, newValue);
+        ProductData data = productData[index];
+        data.Quantity = Mathf.Max(0.0f, data.Quantity - quantity);
+        productData[index] = data;
+    }
+
+    public bool IsProductEnabled(Product product)
+    {
+        return productData[GetIndex(product)].Enabled;
+    }
+
+    public void EnableProduct(Product product)
+    {
+        int index = GetIndex(product);
+        ProductData data = productData[index];
+        data.Enabled = true;
+        productData[index] = data;
+        if (productData[GetIndex(product)].Quantity > 0.0f && product.switchOnSound != null)
+        {
+            audioSource.PlayOneShot(product.switchOnSound);
+        }
+    }
+
+    public void DisableProduct(Product product)
+    {
+        int index = GetIndex(product);
+        ProductData data = productData[index];
+        data.Enabled = false;
+        productData[index] = data;
     }
 
     public float GetProductValue(Product product)
     {
-        return productQuantities[GetIndex(product)];
+        return productData[GetIndex(product)].Quantity;
     }
 
     public string GetLoseReason() {
@@ -82,8 +120,13 @@ public class GameController : MonoBehaviour
 
         foreach(Product product in products)
         {
+            int index = GetIndex(product);
+            if (!productData[index].Enabled)
+                continue;
+
             RemoveProduct(product, product.consumptionSpeed * Time.deltaTime);
-            if (productQuantities[GetIndex(product)] <= 0.0f && product.isVital)
+
+            if (productData[index].Quantity <= 0.0f && product.isVital)
             {        
                 string reason;
                 switch(product.label) {
@@ -114,6 +157,17 @@ public class GameController : MonoBehaviour
 
     public override string ToString()
     {
-        return string.Join(", ", productQuantities.Zip(products, (a, b) => Tuple.Create(a, b)));
+        return string.Join(", ", productData.Zip(products, (a, b) => Tuple.Create(a, b)));
+    }
+
+    public struct ProductData
+    {
+        public float Quantity;
+        public bool Enabled;
+
+        public override string ToString()
+        {
+            return Quantity + " " + (Enabled ? "Enabled" : "Disabled");
+        }
     }
 }
