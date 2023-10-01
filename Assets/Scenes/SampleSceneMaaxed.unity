@@ -6275,10 +6275,6 @@ PrefabInstance:
       propertyPath: Crosshair
       value: 
       objectReference: {fileID: 773099173}
-    - target: {fileID: 1513158801245621241, guid: 89692a70533944741aecaf22aba1ff7d, type: 3}
-      propertyPath: StepDist
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 2823664474674098240, guid: 89692a70533944741aecaf22aba1ff7d, type: 3}
       propertyPath: m_Name
       value: Player
