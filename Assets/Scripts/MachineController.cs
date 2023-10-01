@@ -16,14 +16,11 @@ public class MachineController : MonoBehaviour
 
     void OnTriggerEnter(Collider other) 
     {
-        if (other.CompareTag("Item")) {
-            ResourceController resourceController = other.GetComponentInParent<ResourceController>();
-            if (resourceController != null && resourceController.GetResource() == machine.inputResource) {
-                GameController.Instance.AddProduct(machine.outputProduct, machine.outputQuantity);
-                Destroy(resourceController.gameObject);
-            }
+        ResourceController resourceController = other.GetComponentInParent<ResourceController>();
+        if (resourceController != null && resourceController.GetResource() == machine.inputResource) {
+            GameController.Instance.AddProduct(machine.outputProduct, machine.outputQuantity);
+            Destroy(resourceController.gameObject);
         }
-        
     }
     
 }

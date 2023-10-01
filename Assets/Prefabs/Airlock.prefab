@@ -390,8 +390,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteriorDoor: {fileID: 2916846481012893434}
   ExteriorDoor: {fileID: 8602435803443168437}
-  OpenTime: 5
-  ClosedTime: 5
+  OpenTime: 10
+  ClosedTime: 10
   DestroyTime: 5
   EjectionForce: {x: 0, y: 0, z: -100}
   ItemParent: {fileID: 0}
