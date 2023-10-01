@@ -6,6 +6,9 @@ public class AirlockController : MonoBehaviour
 {
     public DoorController InteriorDoor;
     public DoorController ExteriorDoor;
+    public AudioSource OpenAudio;
+    public AudioSource EjectAudio;
+    public AudioSource EjectPlayerAudio;
     public float InitialDelay = 0.0f;
     public float OpenTime = 1.0f;
     public float ClosedTime = 1.0f;
@@ -46,12 +49,14 @@ public class AirlockController : MonoBehaviour
 
         GenerateItems();
 
+        OpenAudio.Play();
         yield return InteriorDoor.Open();
         StartOpenTime = Time.time;
         yield return new WaitForSeconds(OpenTime);
         StartOpenTime = -1.0f;
         yield return InteriorDoor.Close();
 
+        EjectAudio.Play();
         yield return ExteriorDoor.Open();
         EjectingItems = true;
         yield return new WaitForSeconds(DestroyTime);
@@ -134,6 +139,8 @@ public class AirlockController : MonoBehaviour
             if (player != null)
             {
                 player.enabled = false;
+                if (!EjectPlayerAudio.isPlaying)
+                    EjectPlayerAudio.Play();
                 GameController.Instance.LoseGame();
             }
         }

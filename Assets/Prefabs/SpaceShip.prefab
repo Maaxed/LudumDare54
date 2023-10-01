@@ -357,6 +357,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Airlock
       objectReference: {fileID: 0}
+    - target: {fileID: 6950122296402918160, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950122296402918160, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950122296402918160, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7208420114562392426, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
       propertyPath: m_LocalScale.x
       value: 6
@@ -659,6 +671,18 @@ PrefabInstance:
     - target: {fileID: 6557747152711472369, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
       propertyPath: m_Name
       value: Airlock (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950122296402918160, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950122296402918160, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950122296402918160, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.3
       objectReference: {fileID: 0}
     - target: {fileID: 7208420114562392426, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
       propertyPath: m_LocalScale.x
