@@ -17,9 +17,13 @@ public class AirlockController : MonoBehaviour
     private System.Random random = new System.Random();
     private bool EjectingItems = false;
 
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(Run());
+    }
+    private void OnDisable()
+    {
+        StopCoroutine(Run());
     }
 
     public IEnumerator Run()
