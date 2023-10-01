@@ -7,6 +7,7 @@ public class GrabController : MonoBehaviour
     public Rigidbody GrabbedObject;
     public GameObject Crosshair;
     public float Force = 1.0f;
+    public float ThrowForce = 1.0f;
     public float RotationForce = 1.0f;
     public float MaxGrabDistance = 10.0f;
     public float HoldDistance = 3.0f;
@@ -16,7 +17,12 @@ public class GrabController : MonoBehaviour
     {
         if (Input.GetButtonUp("Fire1"))
         {
-            GrabbedObject = null;
+            if (GrabbedObject != null)
+            {
+                if (Input.GetAxis("Vertical") > 0.0001f)
+                    GrabbedObject.AddForce(transform.forward * ThrowForce, ForceMode.VelocityChange);
+                GrabbedObject = null;
+            }
         }
 
         bool showCrosshair = false;
