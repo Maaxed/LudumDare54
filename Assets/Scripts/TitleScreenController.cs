@@ -7,7 +7,6 @@ public class TitleScreenController : MonoBehaviour
     public GameObject leftDoor;
     public GameObject rightDoor;
     public Button enterButton;
-    public Button quitButton;
     
     private bool entering = false;
     private AsyncOperation loadOperation;
@@ -17,7 +16,6 @@ public class TitleScreenController : MonoBehaviour
     void Start()
     {
         enterButton.onClick.AddListener(enterGame);
-        quitButton.onClick.AddListener(quitGame);
     }
 
     // Update is called once per frame
@@ -29,7 +27,6 @@ public class TitleScreenController : MonoBehaviour
             
             if (leftDoor.transform.position.x + leftDoor.GetComponent<RectTransform>().rect.width  < 0) {
                 entering = false;
-                SceneManager.SetActiveScene(SceneManager.GetSceneByName("SampleSceneMathilde"));
                 SceneManager.UnloadSceneAsync("TitleScreen");
             }
         }
@@ -39,9 +36,5 @@ public class TitleScreenController : MonoBehaviour
     {
         entering = true;
         loadOperation = SceneManager.LoadSceneAsync("SampleSceneMathilde", LoadSceneMode.Additive);
-    }
-
-    void quitGame() {
-        Application.Quit();
     }
 }

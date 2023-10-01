@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleSceneMathilde.unity
     guid: b7e3609c774742145b6c817e795e04e9
+  - enabled: 1
+    path: Assets/Scenes/GameOverScreen.unity
+    guid: bb4e9bcda40b4d748b5f1983e26cc5a3
   m_configObjects: {}

@@ -141,7 +141,7 @@ public class AirlockController : MonoBehaviour
                 player.enabled = false;
                 if (!EjectPlayerAudio.isPlaying)
                     EjectPlayerAudio.Play();
-                GameController.Instance.LoseGame();
+                GameController.Instance.LoseGame("you have been ejected");
             }
         }
     }

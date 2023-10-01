@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField] public List<Product> products;
 
     private List<float> productQuantities = new List<float>();
+    private string loseReason;
 
     private void Awake()
     {
@@ -66,6 +68,10 @@ public class GameController : MonoBehaviour
         return productQuantities[GetIndex(product)];
     }
 
+    public string GetLoseReason() {
+        return loseReason;
+    }
+
     // Update is called once per frame
     void Update() 
     {
@@ -78,14 +84,32 @@ public class GameController : MonoBehaviour
         {
             RemoveProduct(product, product.consumptionSpeed * Time.deltaTime);
             if (productQuantities[GetIndex(product)] <= 0.0f && product.isVital)
-            {
-                LoseGame();
+            {        
+                string reason;
+                switch(product.label) {
+                    case "Satiety":
+                        reason = "of hunger";
+                        break;
+                    case "Oxygen":
+                        reason = "of suffocation";
+                        break;
+                    case "Shield":
+                        reason = "of an asteroid rain";
+                        break;
+                    default:
+                        reason = "of unknown reason";
+                        break;
+                }
+                LoseGame(reason);
             }
         }
     }
-    public void LoseGame()
+    public void LoseGame(string reason)
     {
         Debug.Log("You lost !");
+        loseReason = reason;
+        SceneManager.LoadSceneAsync("GameOverScreen", LoadSceneMode.Additive);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("GameOverScreen"));
     }
 
     public override string ToString()
