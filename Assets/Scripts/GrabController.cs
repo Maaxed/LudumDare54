@@ -36,6 +36,18 @@ public class GrabController : MonoBehaviour
                     GrabbedObject = hitInfo.rigidbody;
                 }
             }
+            else
+            {
+                ButtonController button = hitInfo.collider.GetComponentInParent<ButtonController>();
+                if (button != null)
+                {
+                    showCrosshair = true;
+                    if (Input.GetButtonDown("Fire1") && button.OnClocked != null)
+                    {
+                        button.OnClocked.Invoke();
+                    }
+                }
+            }
         }
         if (Crosshair != null)
         {

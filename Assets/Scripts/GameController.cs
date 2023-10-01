@@ -86,6 +86,9 @@ public class GameController : MonoBehaviour
     {
         int index = GetIndex(product);
         ProductData data = productData[index];
+        if (data.Enabled)
+            return;
+
         data.Enabled = true;
         productData[index] = data;
         if (productData[GetIndex(product)].Quantity > 0.0f && product.switchOnSound != null)
@@ -170,6 +173,7 @@ public class GameController : MonoBehaviour
         return string.Join(", ", productData.Zip(products, (a, b) => Tuple.Create(a, b)));
     }
 
+    [Serializable]
     public struct ProductData
     {
         public float Quantity;
