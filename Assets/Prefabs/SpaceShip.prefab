@@ -670,6 +670,10 @@ PrefabInstance:
       propertyPath: EjectionForce.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2916846481012893434, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
+      propertyPath: Door
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3785757932045933630, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.55
@@ -1047,6 +1051,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 8.58
       objectReference: {fileID: 0}
+    - target: {fileID: 4929109378376529427, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5335043356702873852, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -1106,6 +1114,10 @@ PrefabInstance:
     - target: {fileID: 7208420114562392426, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078911631141599213, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.1
       objectReference: {fileID: 0}
     - target: {fileID: 8288624140141077201, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
       propertyPath: m_LocalPosition.z

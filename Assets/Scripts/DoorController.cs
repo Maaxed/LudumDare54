@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    public GameObject Door;
+    public Animator DoorAnimator;
     public float OpeningTime = 1.0f;
     public float CloseingTime = 1.0f;
     public DoorStatus DoorState = DoorStatus.Closed;
@@ -14,10 +14,11 @@ public class DoorController : MonoBehaviour
             yield break;
 
         DoorState = DoorStatus.Opening;
-        yield return new WaitForSeconds(OpeningTime);
 
-        Door.SetActive(false);
-        DoorState = DoorStatus.Open;
+        DoorAnimator.SetBool("Open", true);
+
+        while (DoorState != DoorStatus.Open)
+            yield return null;
     }
 
     public IEnumerator Close()
@@ -26,9 +27,20 @@ public class DoorController : MonoBehaviour
             yield break;
 
         DoorState = DoorStatus.Closing;
-        yield return new WaitForSeconds(CloseingTime);
 
-        Door.SetActive(true);
+        DoorAnimator.SetBool("Open", false);
+
+        while (DoorState != DoorStatus.Closed)
+            yield return null;
+    }
+
+    public void OnFinishOpen()
+    {
+        DoorState = DoorStatus.Open;
+    }
+
+    public void OnFinishClose()
+    {
         DoorState = DoorStatus.Closed;
     }
 
