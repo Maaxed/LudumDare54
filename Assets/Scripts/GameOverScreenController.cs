@@ -26,6 +26,6 @@ public class GameOverScreenController : MonoBehaviour
 
     void enterGame()
     {
-        SceneManager.LoadScene("SampleSceneMathilde");
+        SceneManager.LoadScene("SampleSceneMaaxed");
     }
 }

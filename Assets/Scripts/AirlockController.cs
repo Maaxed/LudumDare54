@@ -139,7 +139,7 @@ public class AirlockController : MonoBehaviour
             rb.useGravity = false;
             rb.drag = 0.0f;
             rb.angularDrag = 0.0f;
-            rb.constraints = RigidbodyConstraints.None;
+            rb.constraints &= RigidbodyConstraints.FreezeRotation;
 
             rb.AddForce(transform.rotation * EjectionForce);
 

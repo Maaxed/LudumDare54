@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: 98bacf7038a31d645b9dd1af32c3080c
   - enabled: 1
-    path: Assets/Scenes/SampleSceneMathilde.unity
-    guid: b7e3609c774742145b6c817e795e04e9
-  - enabled: 1
     path: Assets/Scenes/GameOverScreen.unity
     guid: bb4e9bcda40b4d748b5f1983e26cc5a3
+  - enabled: 1
+    path: Assets/Scenes/SampleSceneMaaxed.unity
+    guid: f8762fe96790f564eacb891875dfd23e
   m_configObjects: {}
