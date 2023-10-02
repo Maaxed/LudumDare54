@@ -35,6 +35,6 @@ public class TitleScreenController : MonoBehaviour
     void enterGame()
     {
         entering = true;
-        loadOperation = SceneManager.LoadSceneAsync("SampleSceneMathilde", LoadSceneMode.Additive);
+        loadOperation = SceneManager.LoadSceneAsync("SampleSceneMaaxed", LoadSceneMode.Additive);
     }
 }

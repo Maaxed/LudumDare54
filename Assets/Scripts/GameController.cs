@@ -180,11 +180,7 @@ public class GameController : MonoBehaviour
             Debug.Log("You lost !");
             loseReason = reason;
             
-            AsyncOperation op = SceneManager.LoadSceneAsync("GameOverScreen", LoadSceneMode.Additive);
-            op.completed += (truc) =>
-            {
-                SceneManager.SetActiveScene(SceneManager.GetSceneByName("GameOverScreen"));
-            };
+            SceneManager.LoadSceneAsync("GameOverScreen", LoadSceneMode.Additive);
         }
     }
 
