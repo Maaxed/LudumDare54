@@ -50,6 +50,9 @@ public class EventManager : MonoBehaviour
 
     public void ToggleShield()
     {
-        GameController.Instance.EnableProduct(ShieldProduct);
+        if (AsteroidFieldEventActive)
+        {
+            GameController.Instance.EnableProduct(ShieldProduct);
+        }
     }
 }

@@ -6631,6 +6631,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7929137701116476261, guid: 81089a97517310c46bc174bffb094cfc, type: 3}
+      propertyPath: redPath
+      value: Scenes/SampleSceneMaaxedRedLights
+      objectReference: {fileID: 0}
     - target: {fileID: 8583281722365987779, guid: 81089a97517310c46bc174bffb094cfc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
