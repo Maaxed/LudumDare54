@@ -2262,6 +2262,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MachineElectricity
       objectReference: {fileID: 0}
+    - target: {fileID: 553214272154532781, guid: e2f61dc981a383348a4bd543c68b080d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 604549588991563973, guid: e2f61dc981a383348a4bd543c68b080d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -74.77771
@@ -3151,6 +3155,10 @@ PrefabInstance:
     - target: {fileID: 2335215303790884166, guid: ac86aa5a7d8d5654794c4f5b14609f41, type: 3}
       propertyPath: m_Name
       value: MachineFuel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2335215303790884166, guid: ac86aa5a7d8d5654794c4f5b14609f41, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2366863863093987016, guid: ac86aa5a7d8d5654794c4f5b14609f41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4071,6 +4079,10 @@ PrefabInstance:
     - target: {fileID: 943238830585521046, guid: 1c88f7dbd760fc84ab71ced651cda941, type: 3}
       propertyPath: m_Name
       value: MachineOxygen
+      objectReference: {fileID: 0}
+    - target: {fileID: 943238830585521046, guid: 1c88f7dbd760fc84ab71ced651cda941, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3614793895360913283, guid: 1c88f7dbd760fc84ab71ced651cda941, type: 3}
       propertyPath: m_LocalPosition.x
