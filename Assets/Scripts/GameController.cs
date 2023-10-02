@@ -69,6 +69,26 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public bool TryAddProduct(Product product, float quantity)
+    {
+        int index = GetIndex(product);
+        ProductData data = productData[index];
+        if (data.Quantity + quantity > product.maxValue)
+        {
+            return false;
+        }
+
+        float oldQuantity = data.Quantity;
+        data.Quantity = data.Quantity + quantity;
+        productData[index] = data;
+
+        if (oldQuantity <= 0.0f && data.Quantity > 0.0f && product.switchOnSound != null)
+        {
+            audioSource.PlayOneShot(product.switchOnSound);
+        }
+        return true;
+    }
+
     public void RemoveProduct(Product product, float quantity)
     {
         int index = GetIndex(product);

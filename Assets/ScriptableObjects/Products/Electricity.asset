@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Electricity
   m_EditorClassIdentifier: 
   label: Electricity
-  consumptionSpeed: 0.1
-  initialValue: 45
+  consumptionSpeed: 0.2
+  initialValue: 75
   initiallyEnabled: 1
-  maxValue: 60
+  maxValue: 100
   isVital: 0
   switchOnSound: {fileID: 8300000, guid: 1254c9ec1cbb7ef4aa00fff691168e39, type: 3}

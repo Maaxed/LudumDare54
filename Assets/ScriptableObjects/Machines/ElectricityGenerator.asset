@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Electricity
   inputResource: {fileID: 11400000, guid: d311c9b519bea9a41a56e2e7f07e3496, type: 2}
-  outputQuantity: 5
+  outputQuantity: 8
   outputProduct: {fileID: 11400000, guid: 216553cd42fd40945b82b2678bfc9e16, type: 2}

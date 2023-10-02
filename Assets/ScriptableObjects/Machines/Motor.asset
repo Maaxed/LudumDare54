@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Motor
   inputResource: {fileID: 11400000, guid: ad1389f8303e7314e886215d0f1b9a52, type: 2}
-  outputQuantity: 20
+  outputQuantity: 40
   outputProduct: {fileID: 11400000, guid: d6dada5ee032e15469b2513f158a6a3d, type: 2}

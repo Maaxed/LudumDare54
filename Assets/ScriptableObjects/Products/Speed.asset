@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Speed
   m_EditorClassIdentifier: 
   label: Speed
-  consumptionSpeed: 0.1
-  initialValue: 20
+  consumptionSpeed: 0.25
+  initialValue: 50
   initiallyEnabled: 1
-  maxValue: 40
+  maxValue: 100
   isVital: 0
   switchOnSound: {fileID: 0}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef0448788cc59c4a8d757222262a4df, type: 3}
   m_Name: SlowPhase1Left
   m_EditorClassIdentifier: 
-  DelayBetweenCycles: 20
+  DelayBetweenCycles: 30
   ItemsPerCycle: 2
   Items:
   - Item: {fileID: 1626540704257016629, guid: a00f534c3c9942a438f84c944fe705de, type: 3}

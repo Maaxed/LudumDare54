@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Kitchen
   inputResource: {fileID: 11400000, guid: c3a4e4077292ca142aa227d3cb3e8ef7, type: 2}
-  outputQuantity: 5
+  outputQuantity: 25
   outputProduct: {fileID: 11400000, guid: 01d9128f9be3f914592b4cb627f4edd8, type: 2}

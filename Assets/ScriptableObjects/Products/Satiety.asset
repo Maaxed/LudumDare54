@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Satiety
   m_EditorClassIdentifier: 
   label: Satiety
-  consumptionSpeed: 0.1
-  initialValue: 15
+  consumptionSpeed: 0.4
+  initialValue: 75
   initiallyEnabled: 1
-  maxValue: 20
+  maxValue: 100
   isVital: 1
   switchOnSound: {fileID: 0}

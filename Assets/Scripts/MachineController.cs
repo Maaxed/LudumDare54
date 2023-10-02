@@ -27,12 +27,14 @@ public class MachineController : MonoBehaviour
         if (!GameController.Instance.IsProductEnabled(machine.outputProduct))
             return;
 
-        GameController.Instance.AddProduct(machine.outputProduct, machine.outputQuantity);
-        if (UseAudio != null)
+        if (GameController.Instance.TryAddProduct(machine.outputProduct, machine.outputQuantity))
         {
-            UseAudio.Play();
+            if (UseAudio != null)
+            {
+                UseAudio.Play();
+            }
+            Destroy(resourceController.gameObject);
         }
-        Destroy(resourceController.gameObject);
     }
     
 }

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: OxygenGenerator
   inputResource: {fileID: 11400000, guid: 36012f130d76e2d4e8d9a10036d80257, type: 2}
-  outputQuantity: 15
+  outputQuantity: 7.5
   outputProduct: {fileID: 11400000, guid: c0822d9d9b74cac489659d3966b81c24, type: 2}
