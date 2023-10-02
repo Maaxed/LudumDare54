@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1630073718245856843}
   - component: {fileID: 1433798974371490358}
   m_Layer: 0
-  m_Name: Sas-2-4
+  m_Name: Sas2-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5645418022395529592}
-  m_Mesh: {fileID: -4707882213957194629, guid: 1294a301c8441ed45ab269d36c45a694, type: 3}
+  m_Mesh: {fileID: -4707882213957194629, guid: 9840a88d25c31e245a211bdf71d0e64f, type: 3}
 --- !u!23 &1433798974371490358
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61,7 +61,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2df0bcafa7a2e9c41ac87a5ab34e49dc, type: 2}
+  - {fileID: 2100000, guid: 4df50fccde77ef546bbb8960a1d59c38, type: 2}
+  - {fileID: 2100000, guid: a59e03c5d6166f1499e2b09a002d0d53, type: 2}
+  - {fileID: 2100000, guid: 9938ab9357a39384fb7c3c8f1b6f36fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
