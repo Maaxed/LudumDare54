@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PorteSas
       objectReference: {fileID: 0}
+    - target: {fileID: 7651190370470523225, guid: 866fa3dbc3952a84a82976463f3fe2ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8604945106956236556, guid: 866fa3dbc3952a84a82976463f3fe2ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -380,7 +384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2547649673667470141, guid: e9cbd630efc78bc4ebc0b06c33607963, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8570771126687403918, guid: e9cbd630efc78bc4ebc0b06c33607963, type: 3}
       propertyPath: m_LocalPosition.x
