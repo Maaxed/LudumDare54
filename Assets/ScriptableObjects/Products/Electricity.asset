@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Electricity
   consumptionSpeed: 0.1
-  initialValue: 30
+  initialValue: 45
   initiallyEnabled: 1
   maxValue: 60
   isVital: 0

@@ -10,16 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ef0448788cc59c4a8d757222262a4df, type: 3}
-  m_Name: ItemGeneration
+  m_Name: SlowPhase1Left
   m_EditorClassIdentifier: 
+  DelayBetweenCycles: 20
   ItemsPerCycle: 2
   Items:
   - Item: {fileID: 1626540704257016629, guid: a00f534c3c9942a438f84c944fe705de, type: 3}
-    Count: 1
-  - Item: {fileID: 1626540704257016629, guid: b05adf7bfe047cd438df6fc2ec868ff2, type: 3}
-    Count: 1
+    Count: 4
   - Item: {fileID: 1626540704257016629, guid: 816a1a3c5c1c64d42b8aa55e81c0df6a, type: 3}
-    Count: 1
-  - Item: {fileID: 1626540704257016629, guid: 06c92cd7e4e5fb34e80f9043742e4476, type: 3}
-    Count: 1
-  Next: {fileID: 0}
+    Count: 4
+  Next: {fileID: 11400000, guid: a6dd741f57977d149b96f76c887c6293, type: 2}

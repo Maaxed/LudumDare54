@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef0448788cc59c4a8d757222262a4df, type: 3}
+  m_Name: InputRush1Right
+  m_EditorClassIdentifier: 
+  DelayBetweenCycles: 12
+  ItemsPerCycle: 4
+  Items:
+  - Item: {fileID: 1626540704257016629, guid: 06c92cd7e4e5fb34e80f9043742e4476, type: 3}
+    Count: 8
+  - Item: {fileID: 1626540704257016629, guid: b05adf7bfe047cd438df6fc2ec868ff2, type: 3}
+    Count: 8
+  Next: {fileID: 11400000, guid: 68cf649fdfdd4fe4d8acb8f0694b593a, type: 2}

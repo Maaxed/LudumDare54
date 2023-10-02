@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Oxygen
   consumptionSpeed: 0.6
-  initialValue: 100
+  initialValue: 150
+  initiallyEnabled: 1
   maxValue: 200
   isVital: 1
+  switchOnSound: {fileID: 0}

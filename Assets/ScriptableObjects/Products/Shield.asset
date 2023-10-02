@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Shield
   consumptionSpeed: 0.1
-  initialValue: 10
+  initialValue: 15
   initiallyEnabled: 0
   maxValue: 20
   isVital: 1

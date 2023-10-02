@@ -15,5 +15,7 @@ MonoBehaviour:
   label: Speed
   consumptionSpeed: 0.1
   initialValue: 20
+  initiallyEnabled: 1
   maxValue: 40
   isVital: 0
+  switchOnSound: {fileID: 0}

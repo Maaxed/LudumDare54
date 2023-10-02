@@ -11,7 +11,6 @@ public class AirlockController : MonoBehaviour
     public AudioSource EjectPlayerAudio;
     public float InitialDelay = 0.0f;
     public float OpenTime = 1.0f;
-    public float ClosedTime = 1.0f;
     public float DestroyTime = 1.0f;
     public Vector3 EjectionForce;
     public Transform ItemParent;
@@ -45,7 +44,7 @@ public class AirlockController : MonoBehaviour
 
     public IEnumerator PlayCycle()
     {
-        yield return new WaitForSeconds(ClosedTime);
+        yield return new WaitForSeconds(ItemGeneration.DelayBetweenCycles);
 
         GenerateItems();
 
@@ -64,41 +63,50 @@ public class AirlockController : MonoBehaviour
         yield return ExteriorDoor.Close();
     }
 
+    private void SetupItemPool()
+    {
+        ItemPool.Clear();
+
+        foreach (ItemGeneration.ItemConfig itemConfig in ItemGeneration.Items)
+        {
+            for (int i = 0; i < itemConfig.Count; i++)
+            {
+                ItemPool.Add(itemConfig.Item);
+            }
+        }
+
+        // Shuffle item list
+        for (int i = ItemPool.Count - 1; i > 0; i--)
+        {
+            int j = random.Next(i + 1);
+            // Swap item i and j
+            GameObject value = ItemPool[j];
+            ItemPool[j] = ItemPool[i];
+            ItemPool[i] = value;
+        }
+    }
+
     private GameObject ChooseNextItem()
     {
-        if (ItemPool == null || ItemPool.Count <= 0)
+        if (ItemPool == null)
         {
-            if (ItemPool == null)
-            {
-                ItemPool = new List<GameObject>();
-            }
-            else if (ItemGeneration.Next != null)
+            ItemPool = new List<GameObject>();
+            SetupItemPool();
+        }
+
+        GameObject item = ItemPool[ItemPool.Count - 1];
+
+        ItemPool.RemoveAt(ItemPool.Count - 1);
+
+        if (ItemPool.Count <= 0)
+        {
+            if (ItemGeneration.Next != null)
             {
                 ItemGeneration = ItemGeneration.Next;
             }
 
-            foreach (ItemGeneration.ItemConfig itemConfig in ItemGeneration.Items)
-            {
-                for (int i = 0; i < itemConfig.Count; i++)
-                {
-                    ItemPool.Add(itemConfig.Item);
-                }
-            }
-
-            // Shuffle item list
-            for (int i = ItemPool.Count - 1; i > 0; i--)
-            {
-                int j = random.Next(i + 1);
-                // Swap item i and j
-                GameObject value = ItemPool[j];
-                ItemPool[j] = ItemPool[i];
-                ItemPool[i] = value;
-            }
-
+            SetupItemPool();
         }
-        GameObject item = ItemPool[ItemPool.Count - 1];
-
-        ItemPool.RemoveAt(ItemPool.Count - 1);
 
         return item;
     }
