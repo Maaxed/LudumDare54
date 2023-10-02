@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class GrabController : MonoBehaviour
@@ -59,15 +60,22 @@ public class GrabController : MonoBehaviour
     {
         if (GrabbedObject != null)
         {
+            float holdDistance = HoldDistance;
+            GrabObject grabObject = GrabbedObject.GetComponentInParent<GrabObject>();
+            if (grabObject != null)
+            {
+                holdDistance = grabObject.HoldDistance;
+            }
+
             Vector3 rot = transform.rotation.eulerAngles;
             float pitch = Mathf.DeltaAngle(0.0f, rot.x);
-            Vector3 targetPos = transform.position + transform.forward * HoldDistance;
+            Vector3 targetPos = transform.position + transform.forward * holdDistance;
             if (pitch > 0.0f) // When looking down
             {
                 pitch = Mathf.Min(45.0f, pitch);
                 rot.x = pitch;
 
-                float holdDistance = HoldDistance / Mathf.Cos(Mathf.Deg2Rad * pitch);
+                holdDistance /= Mathf.Cos(Mathf.Deg2Rad * pitch);
                 targetPos = transform.position + Quaternion.Euler(rot) * Vector3.forward * holdDistance;
             }
             GrabbedObject.velocity = (targetPos - GrabbedObject.position) * Force;

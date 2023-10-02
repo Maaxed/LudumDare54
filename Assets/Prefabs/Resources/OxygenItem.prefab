@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 2026631442241707925}
   - component: {fileID: 2786882431940564163}
   - component: {fileID: 5668651480368732097}
+  - component: {fileID: -7024240601854553224}
   m_Layer: 0
   m_Name: OxygenItem
   m_TagString: Item
@@ -153,6 +154,19 @@ CapsuleCollider:
   m_Height: 3.92
   m_Direction: 1
   m_Center: {x: 0, y: 0.21, z: 0}
+--- !u!114 &-7024240601854553224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626540704257016629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8eb918c4fccf584d9ad418aa14a79a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HoldDistance: 3
 --- !u!1 &8336261908168005728
 GameObject:
   m_ObjectHideFlags: 0

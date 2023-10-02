@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7296017334586577110}
   - component: {fileID: 2026631442241707925}
   - component: {fileID: 2786882431940564163}
+  - component: {fileID: 9194228584809106704}
   m_Layer: 0
   m_Name: EnergyItem
   m_TagString: Item
@@ -77,6 +78,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: {fileID: 11400000, guid: d311c9b519bea9a41a56e2e7f07e3496, type: 2}
+--- !u!114 &9194228584809106704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626540704257016629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8eb918c4fccf584d9ad418aa14a79a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HoldDistance: 3.5
 --- !u!1 &2964993774418088655
 GameObject:
   m_ObjectHideFlags: 0

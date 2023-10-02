@@ -358,11 +358,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrabbedObject: {fileID: 0}
   Crosshair: {fileID: 0}
-  Force: 8
+  Force: 20
   ThrowForce: 20
   RotationForce: 1
   MaxGrabDistance: 6
-  HoldDistance: 3
+  HoldDistance: 3.5
 --- !u!1 &6762932388196307387
 GameObject:
   m_ObjectHideFlags: 0
