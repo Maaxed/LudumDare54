@@ -19,12 +19,12 @@ public class CameraController : MonoBehaviour
             return;
 
         float horizontal = Input.GetAxis("CameraHorizontal");
-        if (Mathf.Abs(horizontal) > 0.0001)
+        if (Mathf.Abs(horizontal) > 0.001)
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0.0f, horizontal * Speed, 0.0f));
         }
         float vertical = Input.GetAxis("CameraVertical");
-        if (Mathf.Abs(vertical) > 0.0001)
+        if (Mathf.Abs(vertical) > 0.001)
         {
             Vector3 newRotation = Camera.rotation.eulerAngles + new Vector3(vertical * Speed, 0.0f, 0.0f);
             newRotation.x = Mathf.Clamp(Mathf.DeltaAngle(0.0f, newRotation.x), -90.0f, 90.0f);
