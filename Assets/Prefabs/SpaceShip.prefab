@@ -664,11 +664,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 6e3b0f6c1a0fabf4399efbae9a389ad7, type: 2}
     - target: {fileID: 365967895183845335, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
       propertyPath: EjectionForce.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 365967895183845335, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
       propertyPath: EjectionForce.z
-      value: 0
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 2916846481012893434, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
       propertyPath: Door
@@ -1037,11 +1037,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 1afe0cc8476c6a64fbeec3f6bc9f3c9c, type: 2}
     - target: {fileID: 365967895183845335, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
       propertyPath: EjectionForce.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 365967895183845335, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
       propertyPath: EjectionForce.z
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3785757932045933630, guid: 2f4aaa22aa1ec9c479f158a2e52927df, type: 3}
       propertyPath: m_LocalPosition.x
