@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
+    [Header("Asteroid Field")]
     public float EnterAsteroidFieldTime = 0.0f;
     public Product ShieldProduct;
     public AudioSource AsteroidAlarm;
 
     private float CurrentTime = 0.0f;
-    private bool AsteroidFieldEventActive = false;
+    public bool AsteroidFieldEventActive = false;
 
     // Update is called once per frame
     void Update()
