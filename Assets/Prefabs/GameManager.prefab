@@ -183,6 +183,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Alarm: {fileID: 6003412244626425257}
   ProductType: {fileID: 11400000, guid: 216553cd42fd40945b82b2678bfc9e16, type: 2}
+  LightMaterial: {fileID: 2100000, guid: dfa2f3eddfefe3144a40cc7aedff5055, type: 2}
+  WhiteLightMaterial: {fileID: 2100000, guid: 1c7067cea542d3e48a347c2eef1a31ed, type: 2}
+  RedLightMaterial: {fileID: 2100000, guid: dbb845c2f6d741a4182696a3fc3516bb, type: 2}
 --- !u!1 &3047795782279070432
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +232,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -357,7 +360,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
