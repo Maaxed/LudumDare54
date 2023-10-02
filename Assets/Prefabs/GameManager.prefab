@@ -69,8 +69,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnterAsteroidFieldTime: 260
+  AsteroidFieldResistenceTime: 30
   ShieldProduct: {fileID: 11400000, guid: 4704016d9d7aa284f913f10854a76f69, type: 2}
   AsteroidAlarm: {fileID: 9063709559804832072}
+  AsteroidFieldEventActive: 0
 --- !u!82 &3524881196137531283
 AudioSource:
   m_ObjectHideFlags: 0

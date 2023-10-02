@@ -4,6 +4,7 @@ public class EventManager : MonoBehaviour
 {
     [Header("Asteroid Field")]
     public float EnterAsteroidFieldTime = 0.0f;
+    public float AsteroidFieldResistenceTime = 0.0f;
     public Product ShieldProduct;
     public AudioSource AsteroidAlarm;
 
@@ -22,6 +23,14 @@ public class EventManager : MonoBehaviour
 
         if (AsteroidFieldEventActive)
         {
+            if (CurrentTime > EnterAsteroidFieldTime + AsteroidFieldResistenceTime)
+            {
+                if (!GameController.Instance.IsProductEnabled(ShieldProduct))
+                {
+                    GameController.Instance.LoseGame("your spaceship has been destroyed by asteroids");
+                }
+            }
+
             if (GameController.Instance.IsProductEnabled(ShieldProduct))
             {
                 if (AsteroidAlarm.isPlaying)
