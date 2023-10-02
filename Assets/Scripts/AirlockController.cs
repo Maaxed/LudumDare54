@@ -127,12 +127,13 @@ public class AirlockController : MonoBehaviour
 
         if (rb.CompareTag("Player") || rb.CompareTag("Item"))
         {
-            rb.AddForce(transform.rotation * EjectionForce);
-
             // No gravity / drag in space
             rb.useGravity = false;
             rb.drag = 0.0f;
             rb.angularDrag = 0.0f;
+            rb.constraints = RigidbodyConstraints.None;
+
+            rb.AddForce(transform.rotation * EjectionForce);
 
             PlayerController player = other.GetComponentInParent<PlayerController>();
 
